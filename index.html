@@ -3,14 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link style css -->
+    <meta name="theme-color" content="#f7f9fc">
+    <meta name="description" content="A clearer, calmer way to manage student records, attendance, classes, and progress—all in one place.">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <title>Campusly — Student management, made clearer</title>
 </head>
 <body>
-    
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- link scripts -->
-     <script src="./assets/js/script.js"></script>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#home" aria-label="Campusly home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="13" fill="currentColor"/><path d="M11 16.5 20 11l9 5.5v11a1.5 1.5 0 0 1-1.5 1.5h-15a1.5 1.5 0 0 1-1.5-1.5v-11Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="m16 21 2.7 2.7L24.5 18" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="brand-name">campusly<span>.</span></span>
+            </a>
+
+            <button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+            </button>
+
+            <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+                <a href="#overview">Overview</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="#for-schools">For schools</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-button search-toggle" type="button" aria-label="Search this page" title="Search">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+                </button>
+                <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.6 8.6 0 1 0 20.2 15.3Z"/></svg>
+                </button>
+                <button class="button button-small button-dark header-login" type="button" aria-haspopup="dialog" aria-controls="access-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><span>Log in</span></button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero section-shell" id="home">
+            <div class="hero-copy">
+                <a class="announcement" href="#features"><span class="announcement-dot"></span> A better day at school starts here <span aria-hidden="true">→</span></a>
+                <h1>Less admin.<br>More <span>room to grow.</span></h1>
+                <p class="hero-description">The student management platform that brings records, attendance, and progress together—so your school can focus on what matters most.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#features">Explore the platform <span aria-hidden="true">→</span></a>
+                    <a class="button button-quiet" href="#how-it-works"><span class="play-icon" aria-hidden="true">▶</span> See how it works</a>
+                </div>
+                <div class="hero-proof">
+                    <div class="avatar-stack" aria-hidden="true"><span>AM</span><span>JR</span><span>SK</span><span>+</span></div>
+                    <p><strong>Made for the people behind every student.</strong><br>Thoughtful tools for your whole school community.</p>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Preview of the Campusly school dashboard">
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+                <div class="dashboard-card">
+                    <div class="dashboard-topbar">
+                        <div class="dashboard-brand"><span></span> Campusly</div>
+                        <div class="dashboard-top-actions"><span class="topbar-dot"></span><span class="mini-avatar">JD</span></div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="dashboard-greeting"><div><span class="eyebrow">MONDAY, OCTOBER 5</span><h2>Good morning, Jordan <span>✳</span></h2><p>Here’s what’s happening at your school today.</p></div><button class="date-pill" type="button" aria-label="Current date">Today <span>⌄</span></button></div>
+                        <div class="stat-grid">
+                            <article class="stat-card"><span class="stat-icon stat-blue">♧</span><span class="stat-label">Total students</span><strong>1,284</strong><span class="stat-change">↑ 4.8% <span>vs last term</span></span><span class="sparkline spark-blue" aria-hidden="true">▁▂▁▃▂▄▃▅</span></article>
+                            <article class="stat-card"><span class="stat-icon stat-green">✓</span><span class="stat-label">Attendance today</span><strong>96.8<span class="stat-unit">%</span></strong><span class="stat-change">↑ 1.2% <span>vs last week</span></span><span class="sparkline spark-green" aria-hidden="true">▂▁▃▂▄▃▅▄</span></article>
+                        </div>
+                        <div class="dashboard-lower">
+                            <article class="activity-card"><div class="card-heading"><div><span class="eyebrow">YOUR SCHOOL</span><h3>Today at a glance</h3></div><button class="more-button" type="button" aria-label="More activity options">···</button></div><div class="activity-row"><span class="activity-symbol activity-purple">◎</span><span class="activity-text"><strong>New enrollments</strong><small>Admissions · This month</small></span><b>+24</b></div><div class="activity-row"><span class="activity-symbol activity-amber">▤</span><span class="activity-text"><strong>Classes in session</strong><small>Across all grades</small></span><b>18</b></div><div class="activity-row"><span class="activity-symbol activity-teal">↗</span><span class="activity-text"><strong>Progress reports</strong><small>Ready to review</small></span><b>08</b></div></article>
+                            <article class="chart-card"><div class="card-heading"><div><span class="eyebrow">STUDENT SUCCESS</span><h3>Progress overview</h3></div><span class="chart-menu">•••</span></div><div class="chart-total">On track <strong>82%</strong></div><div class="progress-chart" aria-label="Student progress overview: 82 percent on track"><div class="chart-axis"><span>100%</span><span>75%</span><span>50%</span><span>25%</span></div><svg viewBox="0 0 230 100" role="img" aria-label="Progress has steadily increased over the past six months"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5973ec" stop-opacity=".22"/><stop offset="1" stop-color="#5973ec" stop-opacity="0"/></linearGradient></defs><path d="M0 76C20 68 25 73 42 59s26 3 42-8 25 5 41-8 25 4 41-8 27 3 38-15 18-4 26-12v92H0Z" fill="url(#chartFill)"/><path d="M0 76C20 68 25 73 42 59s26 3 42-8 25 5 41-8 25 4 41-8 27 3 38-15 18-4 26-12" fill="none" stroke="#5973ec" stroke-width="3" stroke-linecap="round"/></svg></div><div class="chart-months"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div></article>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-note"><span class="floating-check">✓</span><span><strong>Everything in sync</strong><small>Your school, at a glance</small></span></div>
+            </div>
+            <a class="scroll-cue" href="#overview"><span></span> Scroll to explore</a>
+        </section>
+
+        <section class="trust-strip" aria-label="Platform highlights">
+            <div class="trust-inner"><span>ONE CONNECTED CAMPUS</span><span class="trust-divider"></span><span>STUDENT RECORDS</span><span class="trust-divider"></span><span>ATTENDANCE</span><span class="trust-divider"></span><span>ACADEMIC PROGRESS</span><span class="trust-divider"></span><span>FAMILY CONNECTION</span></div>
+        </section>
+
+        <section class="section section-overview" id="overview">
+            <div class="section-shell overview-grid">
+                <div class="section-intro"><span class="section-kicker"><span></span> A clearer picture</span><h2>One connected view of <span>every student.</span></h2></div>
+                <div class="overview-copy"><p>School information shouldn’t live in a dozen different places. Campusly brings the details your team needs into one calm, clear workspace—so everyone can spend less time searching and more time supporting students.</p><a class="text-link" href="#how-it-works">Get to know Campusly <span aria-hidden="true">→</span></a></div>
+            </div>
+            <div class="section-shell overview-cards">
+                <article class="overview-card overview-featured"><div class="overview-visual records-visual"><div class="record-sheet"><span class="record-avatar">AM</span><span class="record-lines"><b></b><i></i></span><span class="record-tag">Active</span><span class="record-line-long"></span><span class="record-line-long short"></span><span class="record-bottom"><span>Attendance</span><strong>98%</strong></span></div><div class="record-mini">✦ Student profile updated</div></div><div class="overview-card-copy"><span class="card-number">01 / STUDENT RECORDS</span><h3>Every detail, in its place.</h3><p>Keep student profiles, enrollment details, and important documents organized in one easy-to-find home.</p></div></article>
+                <article class="overview-card"><div class="overview-visual attendance-visual"><div class="attendance-window"><div class="attendance-window-top"><span>Weekly attendance</span><span class="attendance-up">↗ 3.2%</span></div><div class="attendance-bars"><i style="--bar:55%"></i><i style="--bar:76%"></i><i style="--bar:64%"></i><i style="--bar:88%"></i><i style="--bar:71%"></i><i style="--bar:96%"></i><i style="--bar:82%"></i></div><div class="attendance-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div></div><span class="attendance-badge">✓ Up to date</span></div><div class="overview-card-copy"><span class="card-number">02 / ATTENDANCE &amp; INSIGHTS</span><h3>Notice the little things.</h3><p>Track daily attendance and see useful patterns before a small concern grows into a bigger one.</p></div></article>
+            </div>
+        </section>
+
+        <section class="section features-section" id="features">
+            <div class="section-shell">
+                <div class="section-heading"><div><span class="section-kicker"><span></span> Everything works together</span><h2>Made for the moving parts<br>of <span>school life.</span></h2></div><p>Less switching between systems. More time for the conversations, decisions, and moments that move students forward.</p></div>
+                <div class="feature-grid">
+                    <article class="feature-card"><span class="feature-icon icon-indigo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20v-1.5a5.5 5.5 0 0 1 11 0V20m2-12a3 3 0 0 1 0 5.8m1 2a4.5 4.5 0 0 1 3 4.2v.5"/></svg></span><span class="feature-index">01</span><h3>Student information</h3><p>Keep profiles, enrollment details, and key records together and easy to update.</p><a href="#get-started" aria-label="Learn more about student information">Learn more <span>→</span></a></article>
+                    <article class="feature-card"><span class="feature-icon icon-mint"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M7.5 3v4m9-4v4M4 10h16m-12 4 2 2 4-4"/></svg></span><span class="feature-index">02</span><h3>Attendance tracking</h3><p>Make daily check-ins simple, consistent, and visible to the people who need them.</p><a href="#get-started" aria-label="Learn more about attendance tracking">Learn more <span>→</span></a></article>
+                    <article class="feature-card"><span class="feature-icon icon-peach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8m-8 4h6"/></svg></span><span class="feature-index">03</span><h3>Classroom organization</h3><p>See classes, schedules, and school-day essentials without digging through folders.</p><a href="#get-started" aria-label="Learn more about classroom organization">Learn more <span>→</span></a></article>
+                    <article class="feature-card"><span class="feature-icon icon-lilac"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18M7 14l4-4 3 3 6-7"/><path d="M16 6h4v4"/></svg></span><span class="feature-index">04</span><h3>Progress at a glance</h3><p>Bring useful academic insights together to help your team make thoughtful decisions.</p><a href="#get-started" aria-label="Learn more about student progress">Learn more <span>→</span></a></article>
+                    <article class="feature-card"><span class="feature-icon icon-sky"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg></span><span class="feature-index">05</span><h3>Family connection</h3><p>Help school teams keep communication clear, timely, and centered on each student.</p><a href="#get-started" aria-label="Learn more about family connection">Learn more <span>→</span></a></article>
+                    <article class="feature-card feature-card-cta"><span class="feature-icon icon-white"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18m9-9H3"/></svg></span><span class="feature-index">YOUR NEXT STEP</span><h3>See what a calmer school day feels like.</h3><a class="feature-cta-link" href="#get-started">Let’s talk <span>↗</span></a></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workflow-section" id="how-it-works">
+            <div class="section-shell workflow-grid">
+                <div class="workflow-copy"><span class="section-kicker"><span></span> Simple by design</span><h2>A more organized school day, <span>step by step.</span></h2><p>Useful software should make your day feel lighter, not add another thing to learn. Campusly keeps the essentials straightforward, so your team can get moving with confidence.</p><a class="button button-primary" href="#get-started">Let’s talk about your school <span>→</span></a></div>
+                <div class="workflow-steps">
+                    <article class="workflow-step"><span class="step-number">01</span><div><h3>Bring your school together</h3><p>Keep key student, class, and school information in one shared place.</p></div><span class="step-check">✓</span></article>
+                    <article class="workflow-step"><span class="step-number">02</span><div><h3>Make everyday tasks simpler</h3><p>Help your team manage attendance and records without extra busywork.</p></div><span class="step-check">✓</span></article>
+                    <article class="workflow-step"><span class="step-number">03</span><div><h3>Focus on what students need</h3><p>Use a clearer view of progress to guide more thoughtful support.</p></div><span class="step-check">✓</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section school-section" id="for-schools">
+            <div class="section-shell school-panel">
+                <div class="school-copy"><span class="section-kicker section-kicker-light"><span></span> For the whole community</span><h2>Better school days are a <span>team effort.</span></h2><p>From the front office to the classroom, give the people who care about students a shared, more organized way to keep up with school life.</p><a class="button button-light" href="#get-started">Find your fit <span>→</span></a></div>
+                <div class="school-roles">
+                    <article><span class="role-icon">✳</span><div><h3>School leaders</h3><p>A more complete view of how your school is doing.</p></div><span class="role-arrow">↗</span></article>
+                    <article><span class="role-icon">⌂</span><div><h3>Teachers &amp; staff</h3><p>Less time hunting for details and more time with students.</p></div><span class="role-arrow">↗</span></article>
+                    <article><span class="role-icon">♡</span><div><h3>Families &amp; students</h3><p>Clearer connections around the school experience.</p></div><span class="role-arrow">↗</span></article>
+                </div>
+                <div class="school-decoration school-decoration-one"></div><div class="school-decoration school-decoration-two"></div>
+            </div>
+        </section>
+
+        <section class="section about-section" id="about">
+            <div class="section-shell about-grid"><div class="about-stamp"><span class="stamp-star">✳</span><span>THE CAMPUSLY<br>APPROACH</span><span class="stamp-line"></span><small>PEOPLE FIRST. ALWAYS.</small></div><div class="about-copy"><span class="section-kicker"><span></span> A little about us</span><h2>Technology should bring people <span>closer.</span></h2><p>We believe the best school tools don’t get in the way. They quietly take care of the details, bring useful information within reach, and give educators more space to do what they do best.</p><a class="text-link" href="#get-started">Start a conversation <span aria-hidden="true">→</span></a></div></div>
+        </section>
+
+        <section class="section cta-section" id="get-started">
+            <div class="section-shell cta-panel"><div class="cta-sparkle" aria-hidden="true">✳</div><span class="section-kicker section-kicker-light"><span></span> Your next chapter</span><h2>Ready for a school day<br>with more <span>room to grow?</span></h2><p>Explore the tools designed to make student records, attendance, and progress easier to manage.</p><a class="button button-light" href="#features">Explore the platform <span>→</span></a><small>Clearer tools. More room for what matters.</small></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-shell footer-main">
+            <div class="footer-brand-column"><a class="brand footer-brand" href="#home" aria-label="Campusly home"><span class="brand-mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="13" fill="currentColor"/><path d="M11 16.5 20 11l9 5.5v11a1.5 1.5 0 0 1-1.5 1.5h-15a1.5 1.5 0 0 1-1.5-1.5v-11Z" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="m16 21 2.7 2.7L24.5 18" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-name">campusly<span>.</span></span></a><p>A little more clarity for the people who make school matter.</p><a class="footer-email" href="#features">Explore the platform <span>→</span></a></div>
+            <div class="footer-links"><div><h3>Explore</h3><a href="#overview">Overview</a><a href="#features">Features</a><a href="#how-it-works">How it works</a></div><div><h3>Who it’s for</h3><a href="#for-schools">School leaders</a><a href="#for-schools">Teachers &amp; staff</a><a href="#for-schools">Families &amp; students</a></div><div><h3>Get in touch</h3><a href="#get-started">Start a conversation</a><a href="#about">Our approach</a><a href="#home">Back to top ↑</a></div></div>
+        </div>
+        <div class="section-shell footer-bottom"><span>© <span id="current-year">2026</span> Campusly. Made for the people behind every student.</span><div><a class="back-to-top" href="#home">Back to top ↑</a></div></div>
+    </footer>
+
+    <dialog class="search-dialog" aria-labelledby="search-title">
+        <form method="dialog" class="search-dialog-top"><h2 id="search-title">Find something</h2><button class="icon-button dialog-close" type="submit" aria-label="Close search">×</button></form>
+        <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg><input class="search-input" type="search" placeholder="Try “attendance” or “families”" autocomplete="off"></label>
+        <p class="search-hint">Search this page to find the right section.</p>
+        <div class="search-results" aria-live="polite"></div>
+    </dialog>
+
+    <dialog class="access-dialog" id="access-dialog" aria-labelledby="access-title">
+        <form method="dialog" class="search-dialog-top"><h2 id="access-title">School portal access</h2><button class="icon-button dialog-close" type="submit" aria-label="Close dialog">×</button></form>
+        <p>Campusly access is provided by your school. Use the sign-in link shared by your school administrator to open your school portal.</p>
+        <a class="button button-primary" href="#for-schools">Explore Campusly <span aria-hidden="true">→</span></a>
+    </dialog>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
