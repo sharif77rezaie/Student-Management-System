@@ -16,6 +16,7 @@ Open `index.html` in a modern browser. No build step or dependencies are require
 
 ## Project structure
 
-- `index.html` — page content and accessible dialog markup.
+- `index.html` — the landing page for the student management platform.
+- `platform.html` — the dedicated platform overview page with feature highlights and product detail.
 - `assets/css/style.css` — responsive styles, visual components, and theme colors.
 - `assets/js/script.js` — navigation, search, theme, and dialog interactions.

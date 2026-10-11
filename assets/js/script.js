@@ -5,41 +5,52 @@ const savedTheme = localStorage.getItem("campusly-theme");
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
 function setTheme(theme) {
+    if (!root) return;
     root.dataset.theme = theme;
-    themeToggle.classList.toggle("is-dark", theme === "dark");
-    themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
-    themeColor.setAttribute("content", theme === "dark" ? "#101727" : "#f7f9fc");
+
+    if (themeToggle) {
+        themeToggle.classList.toggle("is-dark", theme === "dark");
+        themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+    }
+
+    if (themeColor) {
+        themeColor.setAttribute("content", theme === "dark" ? "#101727" : "#f7f9fc");
+    }
 }
 
-setTheme(savedTheme || preferredTheme);
-
-themeToggle.addEventListener("click", () => {
-    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem("campusly-theme", nextTheme);
-});
+if (themeToggle) {
+    setTheme(savedTheme || preferredTheme);
+    themeToggle.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+        setTheme(nextTheme);
+        localStorage.setItem("campusly-theme", nextTheme);
+    });
+}
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".primary-navigation");
 
 function closeNavigation() {
+    if (!menuToggle || !navigation) return;
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open navigation");
     navigation.classList.remove("is-open");
     document.body.classList.remove("menu-open");
 }
 
-menuToggle.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-    navigation.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("menu-open", !isOpen);
-});
+if (menuToggle && navigation) {
+    menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+        navigation.classList.toggle("is-open", !isOpen);
+        document.body.classList.toggle("menu-open", !isOpen);
+    });
 
-navigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeNavigation);
-});
+    navigation.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeNavigation);
+    });
+}
 
 const searchDialog = document.querySelector(".search-dialog");
 const searchInput = document.querySelector(".search-input");
@@ -80,28 +91,45 @@ function renderSearchResults(query) {
     });
 }
 
-document.querySelector(".search-toggle").addEventListener("click", () => {
-    searchInput.value = "";
-    renderSearchResults("");
-    searchDialog.showModal();
-    searchInput.focus();
-});
+const searchToggle = document.querySelector(".search-toggle");
 
-searchInput.addEventListener("input", () => renderSearchResults(searchInput.value));
-searchDialog.addEventListener("click", (event) => {
-    if (event.target === searchDialog) {
-        searchDialog.close();
-    }
-});
+if (searchToggle && searchDialog && searchInput && searchResults) {
+    searchToggle.addEventListener("click", () => {
+        searchInput.value = "";
+        renderSearchResults("");
+        searchDialog.showModal();
+        searchInput.focus();
+    });
+
+    searchInput.addEventListener("input", () => renderSearchResults(searchInput.value));
+    searchDialog.addEventListener("click", (event) => {
+        if (event.target === searchDialog) {
+            searchDialog.close();
+        }
+    });
+}
 
 const accessDialog = document.querySelector("#access-dialog");
+const headerLogin = document.querySelector(".header-login");
 
-document.querySelector(".header-login").addEventListener("click", () => accessDialog.showModal());
-accessDialog.querySelector("a").addEventListener("click", () => accessDialog.close());
-accessDialog.addEventListener("click", (event) => {
-    if (event.target === accessDialog) {
-        accessDialog.close();
+if (headerLogin && accessDialog) {
+    headerLogin.addEventListener("click", () => accessDialog.showModal());
+}
+
+if (accessDialog) {
+    const accessLink = accessDialog.querySelector("a");
+    if (accessLink) {
+        accessLink.addEventListener("click", () => accessDialog.close());
     }
-});
 
-document.querySelector("#current-year").textContent = String(new Date().getFullYear());
+    accessDialog.addEventListener("click", (event) => {
+        if (event.target === accessDialog) {
+            accessDialog.close();
+        }
+    });
+}
+
+const currentYear = document.querySelector("#current-year");
+if (currentYear) {
+    currentYear.textContent = String(new Date().getFullYear());
+}
